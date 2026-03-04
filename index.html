@@ -113,50 +113,157 @@
     .nav-cta:hover { background: var(--terra) !important; }
     .nav-cta::after { display: none !important; }
 
-    /* ── HERO ── */
-    #home {
-      min-height: 100vh;
-      display: grid; grid-template-columns: 55% 45%;
-      border-bottom: 1px solid var(--border);
-      margin-top: 57px;
-    }
-    .hero-l {
-      padding: 80px 64px 80px 48px;
-      display: flex; flex-direction: column; justify-content: center;
-      border-right: 1px solid var(--border);
-    }
-    .eyebrow {
-      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 24px;
-      display: flex; align-items: center; gap: 10px;
-      opacity: 0; animation: fadeUp 0.7s 0.5s ease forwards;
-    }
-    .eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--terra); }
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(48px, 6vw, 80px); font-weight: 900;
-      line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 12px;
-      opacity: 0; animation: fadeUp 0.8s 0.65s ease forwards;
-    }
-    h1 em { font-style: italic; color: var(--terra); }
-    .nick { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.7s 0.8s ease forwards; }
+   /* ── HERO ── */
 
-    /* typewriter tagline */
-    .tagline {
-      font-family: "Playfair Display", serif;
-      font-style: italic; font-size: 18px; line-height: 1.5;
-      max-width: 420px; margin-bottom: 8px;
-      opacity: 0; animation: fadeUp 0.7s 0.95s ease forwards;
-      min-height: 56px;
-    }
-    .cursor-blink { display: inline-block; width: 2px; height: 1em; background: var(--terra); vertical-align: text-bottom; margin-left: 2px; animation: blink 0.9s step-end infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+#home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  border-bottom: 1px solid var(--border);
+  margin-top: 57px;
+}
 
-    .sub { font-size: 12px; color: var(--muted); max-width: 400px; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.7s 1.1s ease forwards; }
-    .hero-btns { display: flex; flex-wrap: wrap; gap: 10px; opacity: 0; animation: fadeUp 0.7s 1.25s ease forwards; }
-    .btn { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); padding: 9px 18px; border-radius: 2px; transition: all 0.25s; }
-    .btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: translateY(-1px); }
-    .btn-primary {
+.hero-l {
+  padding: 80px 64px 80px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.5s ease forwards;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--terra);
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.65s ease forwards;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.nick {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.8s ease forwards;
+}
+
+/* ── HERO MOTTO ── */
+
+.motto {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 26px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.9s ease forwards;
+}
+
+.motto-latin {
+  font-size: 14px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(13,13,13,0.75);
+  display: block;
+}
+
+.motto-eng {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ── TYPEWRITER TAGLINE ── */
+
+.tagline {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 420px;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1.05s ease forwards;
+  min-height: 56px;
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--terra);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 400px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1.15s ease forwards;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1.25s ease forwards;
+}
+
+.btn {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 9px 18px;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
   background: var(--terra);
   color: var(--paper);
   border-color: var(--terra);
@@ -171,12 +278,10 @@
   box-shadow: 0 10px 20px rgba(196,98,45,0.25);
 }
 
-    .btn-primary:hover { background: var(--ink); border-color: var(--ink); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
     /* ── HERO RIGHT ── */
     .hero-r { display: flex; flex-direction: column; opacity: 0; animation: fadeIn 1s 0.8s ease forwards; }
@@ -411,6 +516,7 @@
     .chip { font-size: 8px; letter-spacing: 0.07em; background: rgba(201,168,76,0.1); color: #7a6020; padding: 3px 8px; border-radius: 2px; transition: background 0.2s; }
     .chip:hover { background: rgba(201,168,76,0.25); }
 
+
     /* ── EDUCATION ── */
     .edu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin: 0 48px; }
     .ecard { background: var(--paper); padding: 32px 26px; transition: background 0.25s; }
@@ -594,6 +700,11 @@
     </h1>
 
     <p class="nick">Lapo to most people</p>
+
+    <div class="motto">
+      <span class="motto-latin">Ad astra per aspera</span>
+      <span class="motto-eng">To the stars through difficulties.</span>
+    </div>
 
     <p class="tagline" id="tagline">
       <span class="cursor-blink"></span>
