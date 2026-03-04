@@ -319,12 +319,33 @@ h1 em {
     .sh-l.visible { transform: scaleX(1); }
 
     /* ── ABOUT ── */
-    .about-wrap { display: grid; grid-template-columns: 260px 1fr; padding: 0 48px; }
-    .about-img-col { border-right: 1px solid var(--border); padding-right: 48px; }
+    .about-wrap { display: grid; grid-template-columns: 360px 1fr; padding: 0 48px; }
+    .about-img-col { border-right: 1px solid var(--border); padding-right: 36px; }
     .about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.1); display: block; transition: filter 0.5s ease; }
     .about-img:hover { filter: grayscale(0%) contrast(1.05); }
     .about-cap { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
     .about-body { padding-left: 52px; }
+    .about-motto-left {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: "Playfair Display", serif;
+}
+
+.about-motto-left .about-motto-latin {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.about-motto-left .about-motto-eng {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
     .about-p { font-size: 13px; line-height: 1.85; color: var(--mid); max-width: 560px; margin-bottom: 18px; }
     .about-p {
   font-size: 13px;
@@ -332,27 +353,6 @@ h1 em {
   color: var(--mid);
   max-width: 560px;
   margin-bottom: 18px;
-}
-
-/* ── ABOUT MOTTO ── */
-
-.about-motto {
-  margin-top: 32px;
-  font-family: "Playfair Display", serif;
-}
-
-.about-motto-latin {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(13,13,13,0.65);
-  margin-bottom: 6px;
-}
-
-.about-motto-eng {
-  font-size: 10px;
-  color: var(--muted);
 }
     .about-p strong { color: var(--terra); font-weight: 400; }
     .pull { font-size: 13px; line-height: 1.85; color: var(--mid); max-width: 560px; margin-bottom: 22px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.07); }
@@ -798,12 +798,23 @@ h1 em {
 
 <!-- ABOUT -->
 <section id="about" class="pad">
-  <div class="sh reveal"><span class="sh-n">01</span><span class="sh-t">About</span><div class="sh-l"></div></div>
+  <div class="sh reveal">
+    <span class="sh-n">01</span>
+    <span class="sh-t">About</span>
+    <div class="sh-l"></div>
+  </div>
+
   <div class="about-wrap">
+
     <div class="about-img-col reveal">
-        <img class="about-img" src="images/IMG_3437.jpg" alt="Lapo Odunjo">
-      <p class="about-cap">Lagos → Bradford → New York → Atlanta → Philadelphia</p>
+      <img class="about-img" src="images/IMG_3438.png" alt="Lapo Odunjo">
+
+      <div class="about-motto-left">
+        <span class="about-motto-latin">AD ASTRA PER ASPERA</span>
+        <span class="about-motto-eng">To the stars through difficulties.</span>
+      </div>
     </div>
+
     <div class="about-body reveal reveal-delay-1">
       <p class="about-p">I'm <strong>Lapo</strong>. I grew up in Lagos and have lived across Bradford, New York, Atlanta, and Philadelphia. Moving between those places shaped how I think, the same problem looks completely different depending on where you're standing.</p>
         
@@ -827,10 +838,7 @@ h1 em {
           Curiosity, structure, and patience guide most of what I do. If you understand something deeply enough, you can help it hold.
           </p>
           
-          <div class="about-motto">
-            <span class="about-motto-latin">Ad astra per aspera</span>
-            <span class="about-motto-eng">To the stars through difficulties.</span>
-          </div>
+          
 
       <div class="tags">
         <span class="tag on">AI Systems</span>
