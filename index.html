@@ -250,29 +250,127 @@
     .tag { font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; color: var(--muted); transition: all 0.2s; }
     .tag:hover, .tag.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-    /* ── JOURNEY — horizontal swipe carousel ── */
-    .journey-wrap { padding: 0 48px; position: relative; }
-    .journey-scroll {
-      display: flex; gap: 1px;
-      overflow-x: auto; scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; cursor: grab;
-    }
-    .journey-scroll::-webkit-scrollbar { display: none; }
-    .journey-scroll:active { cursor: grabbing; }
-    .jcard {
-      flex: 0 0 240px; background: var(--paper); padding: 28px 20px;
-      position: relative; overflow: hidden; transition: background 0.25s;
-      scroll-snap-align: start; border: 1px solid var(--border);
-    }
-    .jcard:hover { background: rgba(196,98,45,0.04); }
-    .jcard::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,var(--terra),var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-    .jcard:hover::after { transform: scaleX(1); }
-    .jyear { font-size: 8px; letter-spacing: 0.14em; color: var(--terra); text-transform: uppercase; margin-bottom: 10px; }
-    .jcity { font-family: "Syne", sans-serif; font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-    .jcountry { font-size: 10px; color: var(--muted); margin-bottom: 12px; }
-    .jdesc { font-size: 11px; color: var(--mid); line-height: 1.65; }
-    .journey-hint { text-align: right; padding: 10px 0 0; font-size: 9px; color: var(--muted); letter-spacing: 0.1em; }
+   /* ── JOURNEY — horizontal swipe + expandable carousel ── */
+
+.journey-wrap {
+  padding: 0 48px;
+  position: relative;
+}
+
+.journey-scroll {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.journey-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.journey-scroll:active {
+  cursor: grabbing;
+}
+
+/* Base Card */
+
+.jcard {
+  flex: 0 0 240px;
+  background: var(--paper);
+  padding: 28px 20px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: flex 0.35s ease, background 0.3s ease;
+}
+
+.jcard:hover {
+  background: rgba(196,98,45,0.04);
+}
+
+/* Expand State */
+
+.jcard.expanded {
+  flex: 0 0 420px;
+  background: var(--bg2);
+}
+
+/* Hidden Extra Content */
+
+.jcard .jextra {
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--mid);
+  display: none;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.jcard.expanded .jextra {
+  display: block;
+}
+
+/* Accent Line Animation */
+
+.jcard::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--terra), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.jcard:hover::after {
+  transform: scaleX(1);
+}
+
+/* Text Styling */
+
+.jyear {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: var(--terra);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.jcity {
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.jcountry {
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.jdesc {
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+.journey-hint {
+  text-align: right;
+  padding: 10px 0 0;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
 
     /* ── CARDS ── */
     .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin: 0 48px; }
@@ -442,7 +540,7 @@
   </ul>
 </nav>
 
-<<!-- HERO -->
+<!-- HERO -->
 <section id="home">
   <div class="hero-l">
 
@@ -571,7 +669,7 @@
     </div>
   </div>
 </section>
-<!-- JOURNEY — swipeable carousel -->
+<!-- JOURNEY — swipeable + expandable carousel -->
 <section id="journey" class="pad">
   <div class="sh reveal">
     <span class="sh-n">02</span>
@@ -582,6 +680,7 @@
   <div class="journey-wrap reveal">
     <div class="journey-scroll" id="journeyScroll">
 
+      <!-- LAGOS -->
       <div class="jcard">
         <div class="jyear">1997 → 2014</div>
         <div class="jcity">Lagos</div>
@@ -590,8 +689,13 @@
           Early exposure to infrastructure-scale capital and complex emerging markets.
           The foundation of my investing and systems lens.
         </p>
+        <p class="jextra">
+          Observed how capital, regulation, and infrastructure intersect in volatile environments.
+          First exposure to FX instability and informal market structures.
+        </p>
       </div>
 
+      <!-- BRADFORD -->
       <div class="jcard">
         <div class="jyear">2015 → 2018</div>
         <div class="jcity">Bradford</div>
@@ -600,8 +704,13 @@
           Full Dean Award scholar. Chemical Engineering + Finance.
           Built quantitative discipline across technical and capital frameworks.
         </p>
+        <p class="jextra">
+          Developed Monte Carlo simulation experience and formal DCF modeling.
+          First structured exposure to institutional capital allocation theory.
+        </p>
       </div>
 
+      <!-- CHEVRON -->
       <div class="jcard">
         <div class="jyear">2018 → 2020</div>
         <div class="jcity">Lagos</div>
@@ -610,8 +719,13 @@
           Chevron. Simulation-based refinery optimization and financial modeling
           inside regulated energy markets.
         </p>
+        <p class="jextra">
+          Built process simulation models under regulatory constraints.
+          Learned how operational bottlenecks cascade into financial outcomes.
+        </p>
       </div>
 
+      <!-- ACCRA -->
       <div class="jcard">
         <div class="jyear">2020 → 2021</div>
         <div class="jcity">Accra</div>
@@ -620,8 +734,13 @@
           Cross-border market exposure and West African fintech ecosystem engagement.
           Deepened understanding of regional capital flows.
         </p>
+        <p class="jextra">
+          Studied capital velocity across Nigeria–Ghana corridors.
+          Began mapping how informal lending systems interact with formal banking.
+        </p>
       </div>
 
+      <!-- ATLANTA -->
       <div class="jcard">
         <div class="jyear">2021 → 2022</div>
         <div class="jcity">Atlanta</div>
@@ -630,8 +749,13 @@
           Big Nerd Ranch. 0-to-1 product launch in partnership with a Fortune 10 company.
           $15M generated in first three months.
         </p>
+        <p class="jextra">
+          Designed pricing and go-to-market structure.
+          First experience commercializing accessibility-focused enterprise tech.
+        </p>
       </div>
 
+      <!-- NEW YORK -->
       <div class="jcard">
         <div class="jyear">2021 → 2025</div>
         <div class="jcity">New York</div>
@@ -640,8 +764,13 @@
           Columbia MS. Capital One and TD Bank.
           Enterprise ML systems across 2B+ records and $500M+ capital allocation.
         </p>
+        <p class="jextra">
+          Designed churn propensity models and anomaly detection systems.
+          Worked across finance, legal, and engineering to calibrate risk thresholds.
+        </p>
       </div>
 
+      <!-- NAIROBI -->
       <div class="jcard">
         <div class="jyear">2025 (6 months)</div>
         <div class="jcity">Nairobi</div>
@@ -650,8 +779,13 @@
           VC and private equity ecosystem immersion.
           Built relationships across East African fintech and infrastructure investors.
         </p>
+        <p class="jextra">
+          Evaluated cross-border fintech models under currency risk and regulatory variance.
+          Deepened secondary market and infrastructure investing exposure.
+        </p>
       </div>
 
+      <!-- PHILADELPHIA -->
       <div class="jcard">
         <div class="jyear">2024 → Present</div>
         <div class="jcity">Philadelphia</div>
@@ -660,11 +794,15 @@
           Wharton MBA. Investing at City Ventures.
           Building AI systems at Kinage. President, Wharton Graduate Association.
         </p>
+        <p class="jextra">
+          Full investment lifecycle execution across African markets.
+          Designing AI governance systems for regulated financial institutions.
+        </p>
       </div>
 
     </div>
 
-    <p class="journey-hint">← drag to explore →</p>
+    <p class="journey-hint">Click a card to expand · Drag to explore →</p>
   </div>
 </section>
 
@@ -776,7 +914,7 @@
     </div>
     <div class="sg">
       <div class="sg-t">Markets</div>
-      <ul><li>Nigeria, Kenya, S. Africa, Ghana, Egypt</li><li>Fintech Infrastructure</li><li>Digital Lending</li><li>Energy Infrastructure</li><li>Blended Finance</li></ul>
+      <ul><li>Nigeria, Kenya, S. Africa and Ghana</li><li>Fintech Infrastructure</li><li>Digital Lending</li><li>Energy Infrastructure</li><li>Coaching</li><li>Blended Finance</li></ul>
     </div>
     <div class="sg">
       <div class="sg-t">Tools</div>
@@ -928,6 +1066,22 @@
     </div>
   </div>
 </div>
+
+<section class="coaching pad reveal">
+  <h3>MBA & Operator Coaching</h3>
+
+  <p>
+    I coach ambitious operators applying to top MBA programs and 
+    navigating transitions into product, investing, and technical leadership.
+  </p>
+
+  <a href="https://www.joinleland.com/coach/onaolapo-o"
+     target="_blank"
+     rel="noopener"
+     class="btn">
+     View My Coaching Profile →
+  </a>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="pad">
@@ -1129,29 +1283,29 @@
       });
     });
   
-    /* ── SECTION PARALLAX ── */
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('section').forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const offset = rect.top * 0.02;
-    section.style.transform = `translateY(${offset}px)`;
-  });
-});
+//* ── UNIFIED SCROLL ENGINE ── */
 
-    /* ── HERO PARALLAX ── */
-    const heroImage = document.querySelector('.hero-img img');
-  
-    window.addEventListener('scroll', () => {
-      if (!heroImage) return;
-      const offset = window.scrollY * 0.08;
-      heroImage.style.transform = `translateY(${offset}px)`;
-    });
- /* ── BACKGROUND GRADIENT SHIFT ── */
+const heroImage = document.querySelector('.hero-img img');
+
 window.addEventListener('scroll', () => {
+
   const scrollY = window.scrollY;
   const max = document.body.scrollHeight - window.innerHeight;
   const ratio = scrollY / max;
 
+  /* Section Parallax (exclude Journey) */
+  document.querySelectorAll('section:not(#journey)').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const offset = rect.top * 0.02;
+    section.style.transform = `translateY(${offset}px)`;
+  });
+
+  /* Hero Parallax */
+  if (heroImage) {
+    heroImage.style.transform = `translateY(${scrollY * 0.08}px)`;
+  }
+
+  /* Background Gradient */
   document.body.style.background =
     `linear-gradient(
       180deg,
@@ -1159,4 +1313,23 @@ window.addEventListener('scroll', () => {
       #ede8de 100%
     )`;
 });
- </script>
+
+/* ── JOURNEY EXPAND ON CLICK ── */
+
+document.querySelectorAll('.jcard').forEach(card => {
+  card.addEventListener('click', () => {
+
+    // Close other cards
+    document.querySelectorAll('.jcard').forEach(c => {
+      if (c !== card) {
+        c.classList.remove('expanded');
+      }
+    });
+
+    // Toggle clicked card
+    card.classList.toggle('expanded');
+
+  });
+});
+
+</script>
