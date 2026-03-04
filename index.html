@@ -318,23 +318,25 @@ h1 em {
 }
     .sh-l.visible { transform: scaleX(1); }
 
-    /* ── ABOUT ── */
-    .about-wrap {
+    
+/* ── ABOUT ── */
+.about-wrap {
   display: grid;
   grid-template-columns: 38% 62%;
   padding: 0 48px;
   align-items: center;
 }
-    .about-img-col { border-right: 1px solid var(--border); padding-right: 32px; }
-    .about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.1); display: block; transition: filter 0.5s ease; }
-    .about-img:hover { filter: grayscale(0%) contrast(1.05); }
-    .about-cap { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
-    .about-body {
-  padding-left: 0;
+.about-img-col { border-right: 1px solid var(--border); padding-right: 32px; }
+.about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.1); display: block; transition: filter 0.5s ease; }
+.about-img:hover { filter: grayscale(0%) contrast(1.05); }
+.about-cap { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+.about-body {
+  padding-left: 52px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
-    .about-motto-left {
+
+.about-motto-left {
   margin: 48px auto 0 auto;
   padding-top: 0;
   font-family: "Playfair Display", serif;
@@ -369,12 +371,18 @@ h1 em {
   max-width: 640px;
   width: 100%;
 }
-
-    .about-p strong { color: var(--terra); font-weight: 400; }
-    .pull { font-size: 13px; line-height: 1.85; color: var(--mid); max-width: 560px; margin-bottom: 32px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.07); }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
-    .tag { font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; color: var(--muted); transition: all 0.2s; }
-    .tag:hover, .tag.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.about-p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--mid);
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+.about-p strong { color: var(--terra); font-weight: 400; }
+.pull { font-size: 13px; line-height: 1.85; color: var(--mid); max-width: 560px; margin-bottom: 32px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.07); }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.tag { font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; color: var(--muted); transition: all 0.2s; }
+.tag:hover, .tag.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
    /* ── JOURNEY — horizontal swipe + expandable carousel ── */
 
@@ -804,24 +812,27 @@ h1 em {
         <p class="about-p">
           <p class="about-p">
             <p class="about-p">
-              I learned what fragile systems look like before I had language for it. 
-              In Lagos, I watched fuel lines stretch for hours after one upstream decision failed quietly.
+              I learned what fragile systems look like before I had language for it.
             </p>
             
             <p class="about-p">
-              Later at Chevron, I watched a refinery bottleneck turn into a quarterly write off. No one called it a failure at first. The numbers just kept shifting.
+              In Lagos, I watched fuel lines stretch for hours because one upstream decision failed quietly. Later at Chevron, I watched a refinery bottleneck turn into a quarterly write-off. No one called it a failure at first. The numbers just kept shifting.
             </p>
             
             <p class="about-p">
-              That was the first time I saw how systems actually break. Not loudly. Gradually. Then all at once.
+              That was the first time I understood how systems actually break. Not loudly. Gradually. Then all at once.
             </p>
             
             <p class="about-p">
-              I think about that moment often. It shapes how I design AI in regulated environments and how I allocate capital in emerging markets.
+              That pattern never left me. Whether I am designing AI inside a regulated bank or underwriting an energy project with FX risk, I am asking the same question: where does this break under pressure?
             </p>
             
             <p class="about-p">
-              I founded Young Africans in Diaspora for the same reason. There was a gap. It needed to exist, and it did not.
+              <strong>I believe most AI systems fail in regulated institutions not because the models are weak, but because the escalation logic is naive.</strong>
+            </p>
+            
+            <p class="about-p">
+              I founded Young Africans in Diaspora for the same reason I build most things. There was a gap. It needed to exist, and it did not yet.
             </p>
           
           <div class="tags">
