@@ -482,6 +482,45 @@
     .pb-b { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(245,240,232,0.18); color: #f5f0e8; padding: 9px 18px; border-radius: 2px; font-family: "Syne", sans-serif; font-weight: 600; transition: all 0.25s; }
     .pb-b:hover { border-color: var(--terra); color: var(--terra); }
 
+/* ── COACHING ── */
+
+.coaching-wrap {
+  padding: 0 48px;
+}
+
+.coaching-content {
+  max-width: 720px;
+}
+
+.coaching-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 14px;
+}
+
+.coaching-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.coaching-text {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--mid);
+  margin-bottom: 28px;
+}
+
+.coaching-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
     /* ── CONTACT ── */
     .contact-wrap { padding: 0 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
     .contact-h { font-family: "Playfair Display", serif; font-size: clamp(28px,3.5vw,48px); font-weight: 900; line-height: 1.05; margin-bottom: 14px; }
@@ -1067,20 +1106,49 @@
   </div>
 </div>
 
-<section class="coaching pad reveal">
-  <h3>MBA & Operator Coaching</h3>
+<!-- COACHING -->
+<section id="coaching" class="pad">
+  <div class="sh reveal">
+    <span class="sh-n">13</span>
+    <span class="sh-t">Coaching</span>
+    <div class="sh-l"></div>
+  </div>
 
-  <p>
-    I coach ambitious operators applying to top MBA programs and 
-    navigating transitions into product, investing, and technical leadership.
-  </p>
+  <div class="coaching-wrap reveal">
+    <div class="coaching-content">
 
-  <a href="https://www.joinleland.com/coach/onaolapo-o"
-     target="_blank"
-     rel="noopener"
-     class="btn">
-     View My Coaching Profile →
-  </a>
+      <div class="coaching-label">
+        MBA & Operator Advisory
+      </div>
+
+      <h3 class="coaching-title">
+        Positioning ambitious operators<br>
+        for durable career inflection points.
+      </h3>
+
+      <p class="coaching-text">
+        I work with high-agency operators applying to top MBA programs 
+        and navigating transitions into product, investing, and technical leadership.  
+        The focus is not essays. It’s positioning, clarity, and narrative coherence 
+        across your capital, career, and long-term ambition.
+      </p>
+
+      <div class="coaching-actions">
+        <a href="https://www.joinleland.com/coach/onaolapo-o"
+           target="_blank"
+           rel="noopener"
+           class="btn btn-primary">
+           View Coaching Profile →
+        </a>
+
+        <a href="mailto:odunjoonaolapo@gmail.com"
+           class="btn">
+           Direct Inquiry
+        </a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
