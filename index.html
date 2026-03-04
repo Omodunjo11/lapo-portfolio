@@ -319,12 +319,20 @@ h1 em {
     .sh-l.visible { transform: scaleX(1); }
 
     /* ── ABOUT ── */
-    .about-wrap { display: grid; grid-template-columns: 420px 1fr; padding: 0 48px; }
+    .about-wrap {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  padding: 0 48px;
+}
     .about-img-col { border-right: 1px solid var(--border); padding-right: 32px; }
     .about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.1); display: block; transition: filter 0.5s ease; }
     .about-img:hover { filter: grayscale(0%) contrast(1.05); }
     .about-cap { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
-    .about-body { padding-left: 52px; }
+    .about-body {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
     .about-motto-left {
   margin: 48px auto 0 auto;
   padding-top: 0;
@@ -355,6 +363,10 @@ h1 em {
   font-size: 15px;
   color: var(--muted);
   font-style: italic;
+}
+.about-content {
+  max-width: 640px;
+  width: 100%;
 }
 
     .about-p strong { color: var(--terra); font-weight: 400; }
@@ -819,6 +831,7 @@ h1 em {
     </div>
 
     <div class="about-body reveal reveal-delay-1">
+      <div class="about-content">
       <p class="about-p">I'm <strong>Lapo</strong>. I grew up in Lagos and have lived across Bradford, New York, Atlanta, and Philadelphia. Moving between those places shaped how I think, the same problem looks completely different depending on where you're standing.</p>
         
 
@@ -838,17 +851,17 @@ h1 em {
         Curiosity, structure, and patience guide most of what I do. If you understand something deeply enough, you can help it hold.
         </p>
 
-
-      <div class="tags">
-        <span class="tag on">AI Systems</span>
-        <span class="tag on">Private Markets</span>
-        <span class="tag">Africa</span>
-        <span class="tag">Fintech</span>
-        <span class="tag">Regulated Industries</span>
-        <span class="tag">Electrochemistry</span>
+        <div class="tags">
+          <span class="tag on">AI Systems</span>
+          <span class="tag on">Private Markets</span>
+          <span class="tag">Africa</span>
+          <span class="tag">Fintech</span>
+          <span class="tag">Regulated Industries</span>
+          <span class="tag">Electrochemistry</span>
+        </div>
+    
       </div>
     </div>
-  </div>
 </section>
 <!-- JOURNEY — swipeable + expandable carousel -->
 <section id="journey" class="pad">
