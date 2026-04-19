@@ -327,8 +327,7 @@ h1 em {
   align-items: center;
 }
 .about-img-col { border-right: 1px solid var(--border); padding-right: 32px; }
-.about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.1); display: block; transition: filter 0.5s ease; }
-.about-img:hover { filter: grayscale(0%) contrast(1.05); }
+.about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: contrast(1.05); display: block; }
 .about-cap { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
 .about-body {
   padding-left: 52px;
@@ -814,7 +813,7 @@ h1 em {
       <div class="about-content">
 
         <p class="about-p">
-          I grew up between two worlds — Lagos hustle and Bradford quiet — and spent the years since crossing every border I could find. 36 countries and counting. The through-line is the same question everywhere I go: how does this actually work, and where does it break?
+          I grew up between two worlds: Lagos hustle and Bradford quiet. I have spent the years since crossing every border I could find. 36 countries and counting. The through-line is the same question everywhere I go: how does this actually work, and where does it break?
         </p>
 
         <p class="about-p">
@@ -1037,7 +1036,7 @@ h1 em {
     <div class="card reveal reveal-delay-1">
       <span class="clabel">Founding Member · Philadelphia</span>
       <div class="cname">KOVA <span style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#c4622d;background:rgba(196,98,45,0.1);padding:3px 8px;border-radius:2px;font-family:'DM Mono',monospace;vertical-align:middle;">Raising</span></div>
-      <p class="cdesc">Building a credit data platform that converts informal financial behavior — savings groups, rent, school fees — into structured, usable credit signals for Nigeria's informal economy. Designed the onboarding model leveraging existing collector networks to drive adoption at grassroots scale. Operating across a 5-person cross-functional team.</p>
+      <p class="cdesc">Building a credit data platform that converts informal financial behavior (savings groups, rent, school fees) into structured, usable credit signals for Nigeria's informal economy. Designed the onboarding model leveraging existing collector networks to drive adoption at grassroots scale. Operating across a 5-person cross-functional team.</p>
       <div class="chips"><span class="chip">Nigeria</span><span class="chip">Credit infrastructure</span><span class="chip">Informal economy</span><span class="chip">Fintech</span></div>
     </div>
   </div>
@@ -1070,6 +1069,12 @@ h1 em {
       <span class="clabel">Beyond the work</span>
       <div class="cname">What I am like in the room</div>
       <p class="cdesc">I will talk to anyone at a party. I will remember their name, what they said, and follow up three weeks later. That is not strategy. That is just how I am wired.<br><br>I co-founded Young Africans in Diaspora because the community needed to exist and nobody was building it. I run Sunday conversations about AI, capital, and what it means to build from Africa. I think the most interesting problems live at the intersection of things that do not usually talk to each other.<br><br>I am fluent in English and Yoruba, conversational in French, and working on my Swahili for reasons that will make sense eventually.</p>
+    </div>
+
+    <div class="card">
+      <span class="clabel">Off the record</span>
+      <div class="cname">The unserious version</div>
+      <p class="cdesc">36 countries visited. 3 languages, one of them barely. 2 engineering degrees, 0 engineering jobs. 1 Yoruba name most people get wrong.<br><br>Nigerian jollof is better. This is not negotiable and I will not be taking questions.<br><br>Finishing Wharton MBA. Kinage is live. KOVA is raising. Looking for the next hard problem. Writing about what happens when models meet institutions.<br><br>Life is nonlinear. Lean into it.</p>
     </div>
 
   </div>
@@ -1124,58 +1129,11 @@ h1 em {
 </section>
 
 <!-- OFF THE RECORD -->
-<section id="offrecord" class="pad">
-  <div class="sh reveal">
-    <span class="sh-n">08</span>
-    <span class="sh-t">Off the Record</span>
-    <div class="sh-l"></div>
-  </div>
-  <div class="skills reveal">
-    <div class="sg">
-      <div class="sg-t">The numbers</div>
-      <ul>
-        <li>36 countries visited</li>
-        <li>3 languages, one of them barely</li>
-        <li>2 engineering degrees, 0 engineering jobs</li>
-        <li>1 Yoruba name most people get wrong</li>
-        <li>0 regrets</li>
-      </ul>
-    </div>
-    <div class="sg">
-      <div class="sg-t">Not up for debate</div>
-      <ul>
-        <li>Nigerian jollof is better</li>
-        <li>Most AI failures are communication failures</li>
-        <li>The person who reads the room wins</li>
-        <li>Overconfidence is the most expensive mistake in markets you do not understand yet</li>
-      </ul>
-    </div>
-    <div class="sg">
-      <div class="sg-t">In the room</div>
-      <ul>
-        <li>Will talk to anyone at a party</li>
-        <li>Will also build the system that runs it</li>
-        <li>Lagos to Bradford to New York to Philadelphia</li>
-        <li>Life is nonlinear. Lean into it</li>
-      </ul>
-    </div>
-    <div class="sg">
-      <div class="sg-t">Right now</div>
-      <ul>
-        <li>Finishing Wharton MBA</li>
-        <li>Kinage: live in production</li>
-        <li>KOVA: raising</li>
-        <li>Writing about models meeting institutions</li>
-        <li>Looking for the next hard problem</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- RESUME -->
 <section id="resume" class="pad">
   <div class="sh reveal">
-    <span class="sh-n">09</span>
+    <span class="sh-n">08</span>
     <span class="sh-t">Resume</span>
     <div class="sh-l"></div>
   </div>
@@ -1357,7 +1315,7 @@ h1 em {
 
 <!-- PHOTO STRIP -->
 <style>
-  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; min-height:340px; border-top:1px solid var(--border); }
+  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr; min-height:340px; border-top:1px solid var(--border); }
   .ps-img { overflow:hidden; position:relative; }
   .ps-img img { width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.05) brightness(0.92); transition:transform 0.8s ease; display:block; }
   .ps-img:hover img { transform:scale(1.05); }
@@ -1385,16 +1343,12 @@ h1 em {
     <span class="ps-cap">Nairobi · 2025</span>
   </div>
   <div class="ps-img">
-    <img src="images/photo-dinner.jpg" alt="Dinner with friends">
-    <span class="ps-cap">36 countries · counting</span>
+    <img src="images/photo-blacktie.jpg" alt="New York, 2024">
+    <span class="ps-cap">New York · 2024</span>
   </div>
   <div class="ps-img">
-    <img src="images/photo-blacktie.jpg" alt="Black tie rooftop">
-    <span class="ps-cap">Black tie · always</span>
-  </div>
-  <div class="ps-img">
-    <img src="images/photo-tuxedos.jpg" alt="Dressed right">
-    <span class="ps-cap">Show up · show out</span>
+    <img src="images/photo-tuxedos.jpg" alt="Philadelphia, 2025">
+    <span class="ps-cap">Philadelphia · 2025</span>
   </div>
 </div>
 
@@ -1447,7 +1401,7 @@ h1 em {
       </h2>
 
       <p class="contact-sub">
-        If you are building or investing in infrastructure, systems, or emerging markets — or thinking seriously about how technology reshapes them — I would like to hear from you.
+        If you are building or investing in infrastructure, systems, or emerging markets, or thinking seriously about how technology reshapes them, I would like to hear from you.
       </p>
     </div>
 
