@@ -968,6 +968,12 @@ h1 em {
   </div>
 </section>
 
+<!-- LANDSCAPE BREAK -->
+<div class="landscape-break reveal">
+  <img src="images/photo-landscape.jpg" alt="East Africa countryside">
+  <span class="landscape-break-cap">East Africa · the long view</span>
+</div>
+
 <!-- AI SYSTEMS -->
 <section id="work" class="pad">
   <div class="sh reveal"><span class="sh-n">03</span><span class="sh-t">Intelligence Systems</span><div class="sh-l"></div></div>
@@ -1068,6 +1074,18 @@ h1 em {
 
   </div>
 </section>
+
+<!-- INLINE PHOTO PAIR — after Longer Version -->
+<div class="photo-pair reveal">
+  <div class="ps-img">
+    <img src="images/photo-cocktails.jpg" alt="Friends, good drinks">
+    <span class="ps-cap">The conversations that matter · every city</span>
+  </div>
+  <div class="ps-img">
+    <img src="images/photo-tuxedos.jpg" alt="Dressed up">
+    <span class="ps-cap">Show up right · always</span>
+  </div>
+</div>
 
 <!-- EDUCATION -->
 <section id="education" class="pad">
@@ -1351,12 +1369,26 @@ h1 em {
 
 <!-- PHOTO STRIP -->
 <style>
-  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr; min-height:360px; border-top:1px solid var(--border); }
+  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; min-height:320px; border-top:1px solid var(--border); }
   .ps-img { overflow:hidden; position:relative; }
   .ps-img img { width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.05) brightness(0.92); transition:transform 0.8s ease; display:block; }
   .ps-img:hover img { transform:scale(1.05); }
   .ps-cap { position:absolute; bottom:10px; left:12px; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,240,232,0.7); }
-  @media(max-width:1100px){ .photo-strip{ grid-template-columns:1fr; } .photo-strip .ps-img{ height:280px; } }
+  @media(max-width:1100px){ .photo-strip{ grid-template-columns:1fr 1fr; } .photo-strip .ps-img{ height:240px; } }
+  @media(max-width:600px){ .photo-strip{ grid-template-columns:1fr; } .photo-strip .ps-img{ height:260px; } }
+
+  /* ── INLINE PHOTO PAIR ── */
+  .photo-pair { display:grid; grid-template-columns:1fr 1fr; min-height:320px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .photo-pair .ps-img { overflow:hidden; position:relative; }
+  .photo-pair .ps-img img { width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.05) brightness(0.9); transition:transform 0.8s ease; display:block; }
+  .photo-pair .ps-img:hover img { transform:scale(1.05); }
+  @media(max-width:800px){ .photo-pair{ grid-template-columns:1fr; } .photo-pair .ps-img{ height:260px; } }
+
+  /* ── LANDSCAPE BREAK ── */
+  .landscape-break { height:340px; overflow:hidden; border-top:1px solid var(--border); position:relative; }
+  .landscape-break img { width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:contrast(1.06) brightness(0.85); transition:transform 1.2s ease; display:block; }
+  .landscape-break:hover img { transform:scale(1.03); }
+  .landscape-break-cap { position:absolute; bottom:16px; right:20px; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.6); }
 </style>
 <div class="photo-strip reveal">
   <div class="ps-img">
@@ -1365,11 +1397,19 @@ h1 em {
   </div>
   <div class="ps-img">
     <img src="images/photo-dinner.jpg" alt="Dinner with friends">
-    <span class="ps-cap">36 countries · still counting</span>
+    <span class="ps-cap">36 countries · counting</span>
   </div>
   <div class="ps-img">
-    <img src="images/photo-blacktie.jpg" alt="Black tie">
-    <span class="ps-cap">Always overdressed · never over-committed</span>
+    <img src="images/photo-blacktie.jpg" alt="Black tie rooftop">
+    <span class="ps-cap">Black tie · always</span>
+  </div>
+  <div class="ps-img">
+    <img src="images/photo-cocktails.jpg" alt="Friends and drinks">
+    <span class="ps-cap">Good rooms · good people</span>
+  </div>
+  <div class="ps-img">
+    <img src="images/photo-tuxedos.jpg" alt="Dressed right">
+    <span class="ps-cap">Show up · show out</span>
   </div>
 </div>
 
