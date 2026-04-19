@@ -1075,18 +1075,6 @@ h1 em {
   </div>
 </section>
 
-<!-- INLINE PHOTO PAIR — after Longer Version -->
-<div class="photo-pair reveal">
-  <div class="ps-img">
-    <img src="images/photo-cocktails.jpg" alt="Friends, good drinks">
-    <span class="ps-cap">The conversations that matter · every city</span>
-  </div>
-  <div class="ps-img">
-    <img src="images/photo-tuxedos.jpg" alt="Dressed up">
-    <span class="ps-cap">Show up right · always</span>
-  </div>
-</div>
-
 <!-- EDUCATION -->
 <section id="education" class="pad">
   <div class="sh reveal"><span class="sh-n">06</span><span class="sh-t">Education</span><div class="sh-l"></div></div>
@@ -1369,13 +1357,13 @@ h1 em {
 
 <!-- PHOTO STRIP -->
 <style>
-  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; min-height:320px; border-top:1px solid var(--border); }
+  .photo-strip { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; min-height:340px; border-top:1px solid var(--border); }
   .ps-img { overflow:hidden; position:relative; }
   .ps-img img { width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.05) brightness(0.92); transition:transform 0.8s ease; display:block; }
   .ps-img:hover img { transform:scale(1.05); }
   .ps-cap { position:absolute; bottom:10px; left:12px; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,240,232,0.7); }
-  @media(max-width:1100px){ .photo-strip{ grid-template-columns:1fr 1fr; } .photo-strip .ps-img{ height:240px; } }
-  @media(max-width:600px){ .photo-strip{ grid-template-columns:1fr; } .photo-strip .ps-img{ height:260px; } }
+  @media(max-width:900px){ .photo-strip{ grid-template-columns:1fr 1fr; } .photo-strip .ps-img{ height:260px; } }
+  @media(max-width:600px){ .photo-strip{ grid-template-columns:1fr; } .photo-strip .ps-img{ height:280px; } }
 
   /* ── INLINE PHOTO PAIR ── */
   .photo-pair { display:grid; grid-template-columns:1fr 1fr; min-height:320px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -1386,9 +1374,10 @@ h1 em {
 
   /* ── LANDSCAPE BREAK ── */
   .landscape-break { height:340px; overflow:hidden; border-top:1px solid var(--border); position:relative; }
-  .landscape-break img { width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:contrast(1.06) brightness(0.85); transition:transform 1.2s ease; display:block; }
+  .landscape-break img { width:100%; height:100%; object-fit:cover; object-position:center 55%; filter:contrast(1.08) brightness(0.82) saturate(1.1); transition:transform 1.2s ease; display:block; }
   .landscape-break:hover img { transform:scale(1.03); }
-  .landscape-break-cap { position:absolute; bottom:16px; right:20px; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.6); }
+  .landscape-break::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(13,13,13,0.35) 0%, transparent 50%); pointer-events:none; }
+  .landscape-break-cap { position:absolute; bottom:18px; right:22px; font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.75); z-index:1; }
 </style>
 <div class="photo-strip reveal">
   <div class="ps-img">
@@ -1402,10 +1391,6 @@ h1 em {
   <div class="ps-img">
     <img src="images/photo-blacktie.jpg" alt="Black tie rooftop">
     <span class="ps-cap">Black tie · always</span>
-  </div>
-  <div class="ps-img">
-    <img src="images/photo-cocktails.jpg" alt="Friends and drinks">
-    <span class="ps-cap">Good rooms · good people</span>
   </div>
   <div class="ps-img">
     <img src="images/photo-tuxedos.jpg" alt="Dressed right">
