@@ -379,6 +379,10 @@ h1 em {
 }
 .about-p strong { color: var(--terra); font-weight: 400; }
 .pull { font-size: 13px; line-height: 1.85; color: var(--mid); max-width: 560px; margin-bottom: 32px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.07); }
+.lnum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+.lnum-item { display: flex; flex-direction: column; gap: 4px; }
+.lnum-n { font-family: "Playfair Display", serif; font-size: 48px; font-weight: 900; line-height: 1; color: var(--ink); }
+.lnum-l { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
 .tag { font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; color: var(--muted); transition: all 0.2s; }
 .tag:hover, .tag.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
@@ -1068,7 +1072,34 @@ h1 em {
     <div class="card">
       <span class="clabel">Right now</span>
       <div class="cname">What the calendar actually looks like</div>
-      <p class="cdesc">Finishing the Wharton MBA. Running Kinage in production. Raising for KOVA. Writing about what happens when AI models meet regulated institutions and neither side is ready.<br><br>I co-founded Young Africans in Diaspora because the community needed to exist and nobody was building it. I run Sunday conversations about AI, capital, and what it means to operate from the continent inside Western institutions. The most interesting problems live at intersections. I keep moving toward them.<br><br>2 engineering degrees. 0 engineering jobs. Still the best outcome.</p>
+      <p class="cdesc">Finishing the Wharton MBA. Running Kinage in production. Raising for KOVA. Writing about what happens when AI models meet regulated institutions and neither side is ready.<br><br>I co-founded Young Africans in Diaspora because the community needed to exist and nobody was building it. I run Sunday conversations about AI, capital, and what it means to operate from the continent inside Western institutions. The most interesting problems live at intersections. I keep moving toward them.</p>
+    </div>
+
+    <div class="card longer-nums reveal">
+      <span class="clabel">By the numbers</span>
+      <div class="cname" style="margin-bottom:28px;">The parts that do not fit a resume</div>
+      <div class="lnum-grid">
+        <div class="lnum-item">
+          <div class="lnum-n">36</div>
+          <div class="lnum-l">countries visited</div>
+        </div>
+        <div class="lnum-item">
+          <div class="lnum-n">3</div>
+          <div class="lnum-l">languages spoken</div>
+        </div>
+        <div class="lnum-item">
+          <div class="lnum-n">2</div>
+          <div class="lnum-l">engineering degrees</div>
+        </div>
+        <div class="lnum-item">
+          <div class="lnum-n">1</div>
+          <div class="lnum-l">Yoruba name most people get wrong on first try</div>
+        </div>
+        <div class="lnum-item">
+          <div class="lnum-n">0</div>
+          <div class="lnum-l">engineering jobs. still the right path.</div>
+        </div>
+      </div>
     </div>
 
   </div>
