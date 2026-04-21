@@ -1604,4 +1604,54 @@ document.querySelectorAll('.jcard').forEach(card => {
   });
 });
 
+/* ── SCROLL TOASTS ── */
+const toastData = [
+  { section: '#journey',    msg: '36 countries. Still counting.' },
+  { section: '#work',       msg: 'Built in production. Not just in decks.' },
+  { section: '#capital',    msg: '60+ companies reviewed. 2 deals closed. 0 regrets.' },
+  { section: '#longer',     msg: 'Now you are getting to know the actual person.' },
+  { section: '#writing',    msg: 'He thinks in essays, not bullet points.' },
+  { section: '#contact',    msg: 'You made it this far. We should probably talk.' },
+];
+
+const toastEl = document.createElement('div');
+toastEl.id = 'toast';
+toastEl.style.cssText = `
+  position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+  background:var(--ink); color:#f5f0e8;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.08em;
+  padding:10px 20px; border-radius:2px;
+  opacity:0; pointer-events:none; z-index:9997;
+  transition:opacity 0.35s ease, transform 0.35s ease;
+  white-space:nowrap;
+`;
+document.body.appendChild(toastEl);
+
+let toastTimer;
+function showToast(msg) {
+  clearTimeout(toastTimer);
+  toastEl.textContent = msg;
+  toastEl.style.opacity = '1';
+  toastEl.style.transform = 'translateX(-50%) translateY(0)';
+  toastTimer = setTimeout(() => {
+    toastEl.style.opacity = '0';
+    toastEl.style.transform = 'translateX(-50%) translateY(10px)';
+  }, 3000);
+}
+
+const fired = new Set();
+const toastObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !fired.has(entry.target.id)) {
+      const match = toastData.find(t => t.section === '#' + entry.target.id);
+      if (match) { showToast(match.msg); fired.add(entry.target.id); }
+    }
+  });
+}, { threshold: 0.3 });
+
+toastData.forEach(t => {
+  const el = document.querySelector(t.section);
+  if (el) toastObs.observe(el);
+});
+
 </script>
